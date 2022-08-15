@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Обязательное задание.
 
 Необходимо реализовать четыре функции, каждая функция должна принимать по два
@@ -28,10 +30,62 @@
 
 Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
+    /**
+     * Функция сложения двух чисел
+     * @param {number} a - первое число.
+     * @param {number} b - второе число.
+     * @return {number} Сумма чисел.
+      */
+    function getAddition(a, b) {
+      return a + b;
+    }
+
+    /**
+     * Функция разности двух чисел
+     * @param {number} a - первое число.
+     * @param {number} b - второе число.
+     * @return {number} Разность чисел.
+      */
+    function getDifference(a, b) {
+      if (a > b) {
+        return a - b;
+      } else {
+        return b - a;
+      }
+    }
+
+    /**
+     * Функция умножения двух чисел
+     * @param {number} a - первое число.
+     * @param {number} b - второе число.
+     * @return {number} Произведение чисел.
+      */
+    function getMultiplication(a, b) {
+      return a * b;
+    }
+
+    /**
+     * Функция деления двух чисел
+     * @param {number} a - первое число.
+     * @param {number} b - второе число.
+     * @return {number} Частное от деления чисел.
+      */
+    function getDivision(a, b) {
+      return a / b;
+    }
+
+    //Для проверки
+    let num1 = +prompt('Введите первое число');
+    let num2 = +prompt('Введите второе число');
+
+    alert(`Сумма: ${getAddition(num1, num2)}`);
+    alert(`Сумма: ${getDifference(num1, num2)}`);
+    alert(`Сумма: ${getMultiplication(num1, num2)}`);
+    alert(`Сумма: ${getDivision(num1, num2)}`);
+  </script>
 </body>
+
 </html>
