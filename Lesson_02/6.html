@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Необязательное задание.
 
 Необходимо реализовать функцию, которая будет принимать первым аргументом
@@ -22,25 +24,47 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
 Функция должна работать с любым словом и любым целым положительным числом.
 Все аргументы, которые будут передаваться функции будут верны.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  function declinationOfNumber(count, one, two, five) {
+    /**
+     * Функция возвращает слово (существительное) в нужном падеже в зависимости от 
+     * числа, которое определяет количество, применяемое к данному слову.
+     * @param {number} count - количество предметов, вещей, сущностей и т.д.
+     * @param {String} one - слово в именительном падеже ед.числа.
+     * @param {String} two - слово в родительном падеже ед.числа.
+     * @param {String} five - слово в родительном падеже мн.числа.
+     * @return {String} - одно из переданных в параметры слов подходящее 
+     * под число, которое передано первым аргументом.
+     */
+    function declinationOfNumber(count, one, two, five) {
+      const remFromDivOn10 = count % 10;
+      const remFromDivOn100 = count % 100;
 
-  }
+      if (remFromDivOn100 > 10 && remFromDivOn100 < 15) {
+        return five;
+      }
+      if (remFromDivOn10 > 1 && remFromDivOn10 < 5) {
+        return two;
+      }
+      if (remFromDivOn10 === 1) {
+        return one;
+      }
+      return five;
+    }
 
-  // Число яблок, можно пробовать поставить свое целое, положительное число.
-  const applesNumber = 5;
-  // Получаем от функции одно из слов "яблоко", "яблока" или "яблок".
-  const word = declinationOfNumber(applesNumber, "яблоко", "яблока", "яблок");
-  // Выводим корректную строку, например:
-  // "У меня есть 1 яблоко."
-  // "У меня есть 2 яблока."
-  // "У меня есть 5 яблок."
-  // При любом целом, положительном числе в applesNumber, строка, которая
-  // выводится в console.log, должна иметь правильное склонение слова "яблоко".
-  console.log(`У меня есть ${applesNumber} ${word}.`);
+    //Для проверки: split мы не проходили еще, я сам на mdn изучал.
+    const userNum = +(prompt('Введите количество - целое положительное число'));
+    let userWord = prompt(`Введите три слова: существительное 
+    в именительном и родительном падежах ед.числа и 
+    в родительном падеже мн. числа через запятую`);
 
-</script>
+    let array = userWord.split(',');
+
+    const result = declinationOfNumber(userNum, array[0], array[1], array[2]);
+    alert(`У вас есть ${userNum} ${result}`);
+
+  </script>
 </body>
+
 </html>
