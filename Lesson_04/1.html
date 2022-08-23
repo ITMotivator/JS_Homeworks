@@ -23,7 +23,7 @@
     "use strict";
 
     //Скидку сделал переменной для разнообразия.
-    // В es5 стиле:
+    //В es5 стиле:
     function ProductES5(productName, productPrice) {
       this.productName = productName;
       this.productPrice = productPrice;
@@ -33,7 +33,7 @@
       this.productPrice *= (100 - discount) / 100;
     }
 
-    //Демонстрация работы:
+    //Проверка:
     const prod1 = new ProductES5('phone', 800);
     alert(`We have ${prod1.productName} that costs 
     ${prod1.productPrice} dollars`);
@@ -43,7 +43,7 @@
     alert(`But for you we can make ${discount}% discount, so the price will be
     just ${prod1.productPrice} dollars`);
 
-    // В es6 стиле:
+    //В es6 стиле:
     class ProductES6 {
       constructor(productName, productPrice) {
         this.productName = productName;
@@ -55,7 +55,7 @@
       }
     }
 
-    //Демонстрация работы:
+    //Проверка:
     const prod2 = new ProductES6('tablet', 200);
     alert(`We have ${prod2.productName} that costs 
     ${prod2.productPrice} dollars`);
