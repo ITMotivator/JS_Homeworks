@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Обязательное задание.
 
 Необходимо данное задание выполнить в es5 стиле и в es6 стиле.
@@ -47,10 +49,89 @@
 что-нибудь пропустить.
 4. Если непонятно условие - задайте вопрос.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
+    //В es5 стиле:
+    function PostES5(authorName, postText) {
+      this.authorName = authorName;
+      this.postText = postText;
+      this.postDate = new Date();
+    }
+
+    PostES5.prototype.edit = function (newText) {
+      this.postText = newText;
+      this.postDate = new Date();
+    };
+
+    //Проверка:
+    const newPostEs5 = new PostES5('Mr. Bingo', 'Hello!!!');
+    alert(`New post from ${newPostEs5.authorName}: ${newPostEs5.postText}`);
+    newPostEs5.edit('Hello everybody');
+    alert(`Post from ${newPostEs5.authorName} edited: ${newPostEs5.postText}`);
+
+    function AttachedPostES5(authorName, postText) {
+      PostES5.call(this, authorName, postText);
+      this.highlighted = false;
+    }
+
+    AttachedPostES5.prototype = Object.create(PostES5.prototype);
+    AttachedPostES5.prototype.constructor = AttachedPostES5;
+    AttachedPostES5.prototype.makeTextHighlighted = function () {
+      this.highlighted = true;
+      this.postDate = new Date();
+    }
+
+    //Проверка:
+    const newAttachedPost = new AttachedPostES5('Admin', 'Conversation closed');
+    alert(`Attached post from ${newAttachedPost.authorName}: 
+    ${newAttachedPost.postText}`);
+    newAttachedPost.makeTextHighlighted();
+    alert(newAttachedPost.highlighted);
+
+    //--------------------------------------------------------------------------
+
+    //В es6 стиле:
+    class PostES6 {
+      constructor(authorName, postText) {
+        this.authorName = authorName;
+        this.postText = postText;
+        this.postDate = new Date();
+      }
+
+      edit(newText) {
+        this.postText = newText;
+        this.postDate = new Date();
+      }
+    }
+
+    //Проверка:
+    const newPostEs6 = new PostES6('Mr. ES6', 'Good day!!!');
+    alert(`New post from ${newPostEs6.authorName}: ${newPostEs6.postText}`);
+    newPostEs6.edit('Sorry, good evening!');
+    alert(`Post from ${newPostEs6.authorName} edited: ${newPostEs6.postText}`);
+
+    class AttachedPostES6 extends PostES6 {
+      constructor(authorName, postText) {
+        super(authorName, postText);
+        this.highlighted = false;
+        this.postDate = new Date();
+      }
+
+      makeTextHighlighted() {
+        this.highlighted = true;
+        this.postDate = new Date();
+      }
+    }
+
+    //Проверка:
+    const postAttES06 = new AttachedPostES6('Admin', 'Page update finished');
+    alert(`Attached post from ${postAttES06.authorName}: 
+    ${postAttES06.postText}`);
+    postAttES06.makeTextHighlighted();
+    alert(postAttES06.highlighted);
+
+  </script>
 </body>
+
 </html>
