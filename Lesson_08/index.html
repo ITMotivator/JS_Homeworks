@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -23,8 +25,21 @@
 
                 <span class="cartIconWrap">
                     <img class="cartIcon" src="images/cart.png" alt="">
-                    <span>5</span>
+                    <span>0</span>
                 </span>
+                <div class="basket hidden">
+                    <div class="basketRow basketHeader">
+                        <div>Название товара</div>
+                        <div>Количество</div>
+                        <div>Цена за шт.</div>
+                        <div>Итого</div>
+                    </div>
+
+                    <div class="basketTotal">
+                        Товаров в корзине на сумму:
+                        $<span class="basketTotalValue">0</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -137,12 +152,12 @@
 
         <div class="featuredItems">
 
-            <div class="featuredItem">
+            <div class="featuredItem" data-id="1" data-name="Beared traveller" data-price="75">
 
                 <div class="featuredImgWrap">
                     <img src="images/featured/1.jpg" alt="">
                     <div class="featuredImgDark">
-                        <button>
+                        <button class='addToCart'>
                             <img src="images/cart.svg" alt="">
                             Add to Cart
                         </button>
@@ -151,7 +166,7 @@
 
                 <div class="featuredData">
                     <div class="featuredName">
-                        ELLERY X M'O CAPSULE
+                        Beared traveller
                     </div>
                     <div class="featuredText">
                         Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery
@@ -159,18 +174,18 @@
                         up with Moda Operandi.
                     </div>
                     <div class="featuredPrice">
-                        $52.00
+                        $75.00
                     </div>
                 </div>
 
             </div>
 
-            <div class="featuredItem">
+            <div class="featuredItem" data-id="2" data-name="Business woman" data-price="95">
 
                 <div class="featuredImgWrap">
                     <img src="images/featured/2.jpg" alt="">
                     <div class="featuredImgDark">
-                        <button>
+                        <button class='addToCart'>
                             <img src="images/cart.svg" alt="">
                             Add to Cart
                         </button>
@@ -179,7 +194,7 @@
 
                 <div class="featuredData">
                     <div class="featuredName">
-                        ELLERY X M'O CAPSULE
+                        Business woman
                     </div>
                     <div class="featuredText">
                         Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery
@@ -187,18 +202,18 @@
                         up with Moda Operandi.
                     </div>
                     <div class="featuredPrice">
-                        $52.00
+                        $95.00
                     </div>
                 </div>
 
             </div>
 
-            <div class="featuredItem">
+            <div class="featuredItem" data-id="3" data-name="Durov's double" data-price="70">
 
                 <div class="featuredImgWrap">
                     <img src="images/featured/3.jpg" alt="">
                     <div class="featuredImgDark">
-                        <button>
+                        <button class='addToCart'>
                             <img src="images/cart.svg" alt="">
                             Add to Cart
                         </button>
@@ -207,7 +222,7 @@
 
                 <div class="featuredData">
                     <div class="featuredName">
-                        ELLERY X M'O CAPSULE
+                        Durov's double
                     </div>
                     <div class="featuredText">
                         Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery
@@ -215,18 +230,18 @@
                         up with Moda Operandi.
                     </div>
                     <div class="featuredPrice">
-                        $52.00
+                        $70.00
                     </div>
                 </div>
 
             </div>
 
-            <div class="featuredItem">
+            <div class="featuredItem" data-id="4" data-name="JS developer" data-price="85">
 
                 <div class="featuredImgWrap">
                     <img src="images/featured/4.jpg" alt="">
                     <div class="featuredImgDark">
-                        <button>
+                        <button class='addToCart'>
                             <img src="images/cart.svg" alt="">
                             Add to Cart
                         </button>
@@ -235,7 +250,7 @@
 
                 <div class="featuredData">
                     <div class="featuredName">
-                        ELLERY X M'O CAPSULE
+                        JS developer
                     </div>
                     <div class="featuredText">
                         Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery
@@ -243,18 +258,18 @@
                         up with Moda Operandi.
                     </div>
                     <div class="featuredPrice">
-                        $52.00
+                        $85.00
                     </div>
                 </div>
 
             </div>
 
-            <div class="featuredItem">
+            <div class="featuredItem" data-id="5" data-name="Lady in blue" data-price="100">
 
                 <div class="featuredImgWrap">
                     <img src="images/featured/5.jpg" alt="">
                     <div class="featuredImgDark">
-                        <button>
+                        <button class='addToCart'>
                             <img src="images/cart.svg" alt="">
                             Add to Cart
                         </button>
@@ -263,7 +278,7 @@
 
                 <div class="featuredData">
                     <div class="featuredName">
-                        ELLERY X M'O CAPSULE
+                        Lady in blue
                     </div>
                     <div class="featuredText">
                         Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery
@@ -271,17 +286,17 @@
                         up with Moda Operandi.
                     </div>
                     <div class="featuredPrice">
-                        $52.00
+                        $100.00
                     </div>
                 </div>
 
             </div>
-            <div class="featuredItem">
+            <div class="featuredItem" data-id="6" data-name="Chocolate" data-price="90">
 
                 <div class="featuredImgWrap">
                     <img src="images/featured/6.jpg" alt="">
                     <div class="featuredImgDark">
-                        <button>
+                        <button class='addToCart'>
                             <img src="images/cart.svg" alt="">
                             Add to Cart
                         </button>
@@ -290,7 +305,7 @@
 
                 <div class="featuredData">
                     <div class="featuredName">
-                        ELLERY X M'O CAPSULE
+                        Chocolate
                     </div>
                     <div class="featuredText">
                         Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery
@@ -298,7 +313,7 @@
                         up with Moda Operandi.
                     </div>
                     <div class="featuredPrice">
-                        $52.00
+                        $90.00
                     </div>
                 </div>
 
@@ -399,12 +414,13 @@
                 </a>
             </div>
             <div class="footerRight">
-                &copy; 2021  Brand  All Rights Reserved.
+                &copy; 2021 Brand All Rights Reserved.
             </div>
         </div>
     </div>
 
     <script src="app.js"></script>
+    <script src="basket.js"></script>
 </body>
 
 </html>
